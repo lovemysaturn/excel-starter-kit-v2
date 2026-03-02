@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   Excel Starter Kit v2 — Tailwind v4 Theme
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+    --color-background: #fafbfc;
+    --color-foreground: #0f1729;
+    --color-card: #ffffff;
+    --color-card-foreground: #0f1729;
+    --color-popover: #ffffff;
+    --color-popover-foreground: #0f1729;
+    --color-primary: #6366f1;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #f1f5f9;
+    --color-secondary-foreground: #0f1729;
+    --color-muted: #f1f5f9;
+    --color-muted-foreground: #64748b;
+    --color-accent: #f1f5f9;
+    --color-accent-foreground: #0f1729;
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #ffffff;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-border: #e2e8f0;
+    --color-input: #e2e8f0;
+    --color-ring: #6366f1;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Dark Mode ─── */
+.dark {
+    --color-background: #0a0e1a;
+    --color-foreground: #e8ecf4;
+    --color-card: #111827;
+    --color-card-foreground: #e8ecf4;
+    --color-popover: #111827;
+    --color-popover-foreground: #e8ecf4;
+    --color-primary: #818cf8;
+    --color-primary-foreground: #0f0f23;
+    --color-secondary: #1e293b;
+    --color-secondary-foreground: #e8ecf4;
+    --color-muted: #1e293b;
+    --color-muted-foreground: #94a3b8;
+    --color-accent: #1e293b;
+    --color-accent-foreground: #e8ecf4;
+    --color-destructive: #dc2626;
+    --color-border: #1e293b;
+    --color-input: #1e293b;
+    --color-ring: #818cf8;
+}
+
+/* ─── Base ─── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+}
+
+/* ─── Data Table Styles ─── */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.data-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.data-table th {
+    background: var(--color-muted);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted-foreground);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+}
+
+.data-table td {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    transition: background 0.1s;
+}
+
+.data-table tr:hover td {
+    background: color-mix(in srgb, var(--color-primary) 4%, transparent);
+}
+
+/* ─── Cell Focus/Edit (Excel-like) ─── */
+.cell-focused {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: -2px;
+    background: color-mix(in srgb, var(--color-primary) 6%, transparent) !important;
+}
+
+.cell-editing {
+    outline: 2px solid var(--color-primary) !important;
+    outline-offset: -2px;
+    background: var(--color-card) !important;
+}
+
+.row-selected td {
+    background: color-mix(in srgb, var(--color-primary) 10%, transparent) !important;
+}
+
+/* ─── Page Layout ─── */
+.page-container {
+    padding: 24px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ─── Toolbar ─── */
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-card);
+    flex-shrink: 0;
+}
+
+.toolbar-separator {
+    width: 1px;
+    height: 20px;
+    background: var(--color-border);
+    margin: 0 4px;
+}
+
+/* ─── Key Badge ─── */
+.key-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 22px;
+    padding: 0 6px;
+    background: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 500;
+    font-family: monospace;
+    color: var(--color-muted-foreground);
+}
+
+/* ─── Find & Replace Bar ─── */
+.find-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--color-card);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.2s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ─── Sonner Toast Overrides ─── */
+[data-sonner-toaster] {
+    --normal-bg: var(--color-card);
+    --normal-text: var(--color-foreground);
+    --normal-border: var(--color-border);
+    font-family: var(--font-sans) !important;
+}
